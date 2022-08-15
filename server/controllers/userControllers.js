@@ -16,15 +16,13 @@ const registerUser = asyncHandler(async (req, res) => {
   }
   const user = await User.create({ name, email, password, picture });
   if (user) {
-    res
-      .status(201)
-      .json({
-        _id: user._id,
-        email: user.email,
-        name: user.name,
-        picture: user.picture,
-        token: generateToken(user._id),
-      });
+    res.status(201).json({
+      _id: user._id,
+      email: user.email,
+      name: user.name,
+      picture: user.picture,
+      token: generateToken(user._id),
+    });
   } else {
     res.status(400);
     throw new Error('User creation failed!');
@@ -46,4 +44,16 @@ const loginUser = asyncHandler(async (req, res) => {
     throw new Error('Invalid email or password');
   }
 });
-module.exports = { registerUser, loginUser };
+const getAllUser = asyncHandler(async (req, res) => {
+  const keyword = req.query.search
+    ? {
+        $or: [
+          { name: { $regex: req.query.search, $options: 'i' } },
+          { email: { $regex: req.query.search, $options: 'i' } },
+        ],
+      }
+    : {};
+  const users = await User.find(keyword).find({ _id: { $ne: req.user._id } });
+  res.send(users);
+});
+module.exports = { registerUser, loginUser, getAllUser };
