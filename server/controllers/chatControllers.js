@@ -91,5 +91,26 @@ const createGroup = asyncHandler(async (req, res) => {
     throw new Error(error.message);
   }
 });
+const renameGroup = asyncHandler(async (req, res) => {
+  const { chatId, chatName } = req.body;
 
-module.exports = { fetchChats, chatGet, createGroup };
+  const updatedChat = await Chat.findByIdAndUpdate(
+    chatId,
+    {
+      chatName: chatName,
+    },
+    {
+      new: true,
+    }
+  )
+    .populate('users', '-password')
+    .populate('groupAdmin', '-password');
+
+  if (!updatedChat) {
+    res.status(404);
+    throw new Error('Chat Not Found');
+  } else {
+    res.json(updatedChat);
+  }
+});
+module.exports = { fetchChats, chatGet, createGroup, renameGroup };
