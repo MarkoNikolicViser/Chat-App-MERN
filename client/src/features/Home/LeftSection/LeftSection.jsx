@@ -2,16 +2,20 @@ import React from 'react';
 import ctl from '@netlify/classnames-template-literals';
 import { Icon } from '../../../components';
 
-export const LeftSection = () => {
+export const LeftSection = props => {
+  const { data } = props;
   return (
-    <div className={divStyle}>
-      <Icon />
+    <section className={sectionStyle}>
+      <div className={divStyle}>
+        <Icon />
+        <h1>Marko Nikolic</h1>
+      </div>
       LeftSection
-    </div>
+    </section>
   );
 };
 //min-w-[30%]
-const divStyle = ctl(`w-full
+const sectionStyle = ctl(`w-full
 md:w-[600px]
 bg-gray-200
 h-full
@@ -21,3 +25,6 @@ justify-center
 items-center
 border-r-2
 border-gray-300`);
+const divStyle = ctl(`flex
+items-center
+`);

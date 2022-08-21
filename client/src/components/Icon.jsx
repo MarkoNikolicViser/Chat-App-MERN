@@ -3,8 +3,7 @@ import React from 'react';
 
 export const Icon = props => {
   //const {image,status, size}=props
-  const image =
-    'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png';
+  const image = 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png';
   return (
     <div className={divStyle}>
       <img src={image} className={imageStyle} alt='user-icon' />
@@ -20,7 +19,6 @@ h-16
 flex
 justify-center
 items-center
-bg-gray-300
 rounded-full
 relative`);
 const statusDivStyle = ctl(`w-4
