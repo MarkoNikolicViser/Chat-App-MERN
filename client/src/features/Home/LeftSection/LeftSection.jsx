@@ -1,6 +1,7 @@
 import React from 'react';
 import ctl from '@netlify/classnames-template-literals';
 import { Icon } from '../../../components';
+import { Dots } from '../../../assets/Svgs';
 
 export const LeftSection = props => {
   const { data } = props;
@@ -9,6 +10,7 @@ export const LeftSection = props => {
       <div className={divStyle}>
         <Icon />
         <h1>Marko Nikolic</h1>
+        <Dots color='red' w={32} h={32} />
       </div>
       LeftSection
     </section>
