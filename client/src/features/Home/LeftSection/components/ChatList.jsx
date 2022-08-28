@@ -1,5 +1,9 @@
 import React from 'react';
-
+import { ChatListElement } from './ChatListElement';
 export const ChatList = () => {
-  return <div>ChatList</div>;
+  return (
+    <div>
+      <ChatListElement />
+    </div>
+  );
 };

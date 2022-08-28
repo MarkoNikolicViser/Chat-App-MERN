@@ -1,8 +1,8 @@
 import React from 'react';
 import ctl from '@netlify/classnames-template-literals';
-import { Icon } from '../../../components';
+import { Icon, Input } from '../../../components';
 import { Dots } from '../../../assets/Svgs';
-import { Input } from '../../../components';
+import { ChatList } from './components';
 
 export const LeftSection = props => {
   const { data } = props;
@@ -10,26 +10,30 @@ export const LeftSection = props => {
     <section className={sectionStyle}>
       <div className={divStyle}>
         <div className='flex items-center'>
-          <Icon />
+          <Icon
+            image='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'
+            status={true}
+          />
           <div>
             <h1>Marko Nikolic</h1>
             <h6>Set a status</h6>
           </div>
         </div>
-        <Dots color='red' w={32} h={32} />
+        <Dots color='gray' w={22} h={22} />
       </div>
-      <Input />
+      <Input placeholder='Search for people' />
+      <ChatList />
     </section>
   );
 };
 //min-w-[30%]
 const sectionStyle = ctl(`w-full
 md:w-[600px]
-bg-gray-200
+min-w-[300px]
+bg-gray-100
 h-full
 flex
 flex-col
-justify-center
 items-center
 border-r-2
 border-gray-300

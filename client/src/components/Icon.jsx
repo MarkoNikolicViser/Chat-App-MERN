@@ -2,12 +2,11 @@ import ctl from '@netlify/classnames-template-literals';
 import React from 'react';
 
 export const Icon = props => {
-  //const {image,status, size}=props
-  const image = 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png';
+  const { image, status } = props;
   return (
     <div className={divStyle}>
       <img src={image} className={imageStyle} alt='user-icon' />
-      <div className={statusDivStyle}></div>
+      {status && <div className={statusDivStyle} />}
     </div>
   );
 };
