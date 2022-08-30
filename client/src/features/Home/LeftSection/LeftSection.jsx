@@ -29,7 +29,7 @@ export const LeftSection = props => {
 //min-w-[30%]
 const sectionStyle = ctl(`w-full
 md:w-[600px]
-min-w-[300px]
+min-w-[400px]
 bg-gray-100
 h-full
 flex

@@ -14,7 +14,6 @@ export const Home = () => {
   );
 };
 const divStyle = ctl(`flex
-w-11/12
-h-full
-m-12
+w-[90%]
+h-[85%]
 `);
