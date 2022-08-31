@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ctl from '@netlify/classnames-template-literals';
 import { Icon, Input } from '../../../components';
 import { Dots } from '../../../assets/Svgs';
@@ -6,6 +6,10 @@ import { ChatList } from './components';
 
 export const LeftSection = props => {
   const { data } = props;
+  const [searchText, setSearchText] = useState('');
+  const Function = e => {
+    setSearchText(e.target.value);
+  };
   return (
     <section className={sectionStyle}>
       <div className={divStyle}>
@@ -21,7 +25,11 @@ export const LeftSection = props => {
         </div>
         <Dots color='gray' w={22} h={22} />
       </div>
-      <Input placeholder='Search for people' />
+      <Input
+        value={searchText}
+        Function={Function}
+        placeholder='Search for people'
+      />
       <ChatList />
     </section>
   );
@@ -37,7 +45,7 @@ flex-col
 items-center
 border-r-2
 border-gray-300
-p-10`);
+p-2`);
 const divStyle = ctl(`w-full
 flex
 items-center
