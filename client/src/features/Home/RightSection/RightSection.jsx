@@ -2,9 +2,13 @@ import React from 'react';
 import ctl from '@netlify/classnames-template-literals';
 
 export const RightSection = () => {
-  return <div className={divStyle}>RightSection</div>;
+  return (
+    <section className={sectionStyle}>
+      <div className={divStyle}>RightSection</div>
+    </section>
+  );
 };
-const divStyle = ctl(`w-full
+const sectionStyle = ctl(`w-full
 hidden
 md:flex
 bg-white
@@ -12,3 +16,6 @@ h-full
 flex-col
 justify-center
 items-center`);
+const divStyle = ctl(`
+transition-opacity duration-500 ease-out opacity-0 lg:opacity-100
+`);
