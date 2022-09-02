@@ -1,6 +1,5 @@
 import React from 'react';
 import ctl from '@netlify/classnames-template-literals';
-
 export const RightSection = () => {
   return (
     <section className={sectionStyle}>
@@ -17,5 +16,9 @@ flex-col
 justify-center
 items-center`);
 const divStyle = ctl(`
-transition-opacity duration-500 ease-out opacity-0 lg:opacity-100
+transition-opacity
+duration-300
+ease-out
+opacity-0
+lg:opacity-100
 `);

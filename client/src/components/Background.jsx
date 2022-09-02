@@ -8,7 +8,7 @@ export const Background = ({ children }) => {
 }
 const style = ctl(`w-screen
 h-screen 
-bg-blue-100 
+bg-primary 
 flex flex-col 
 justify-center 
 items-center`)

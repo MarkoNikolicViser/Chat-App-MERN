@@ -17,5 +17,5 @@ flex
 justify-center
 flex-col
 items-center
-bg-blue-300
+bg-secondary
 p-16`)
