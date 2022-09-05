@@ -2,11 +2,11 @@ import React from 'react'
 import ctl from '@netlify/classnames-template-literals'
 
 export const FormContainer = (props) => {
-    const { Function, children } = props
-    return (
-        <form onSubmit={Function} className={formStyle}>
-            {children}</form>
-    )
+  const { Function, children } = props
+  return (
+    <form onSubmit={Function} className={formStyle}>
+      {children}</form>
+  ) 
 }
 const formStyle = ctl(`w-full
 md:w-2/3

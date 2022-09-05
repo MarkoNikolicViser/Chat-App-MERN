@@ -1,6 +1,6 @@
-import React from 'react';
-import { Icon } from '../../../../components';
-import ctl from '@netlify/classnames-template-literals';
+import React from 'react'
+import { Icon } from '../../../../components'
+import ctl from '@netlify/classnames-template-literals'
 
 export const ChatListElement = () => {
   return (
@@ -14,11 +14,11 @@ export const ChatListElement = () => {
         <p>Poslednja poruka...</p>
       </div>
     </div>
-  );
-};
+  )
+}
 const mainDivStyle = ctl(`w-full
 flex
 hover:bg-blue-100
 hover:cursor-pointer
 rounded-lg
-m-2`);
+m-2`)

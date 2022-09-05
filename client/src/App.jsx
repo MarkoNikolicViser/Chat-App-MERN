@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
 import { Auth, Home } from './Pages'
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 export const App = () => {
 
   return (<>
@@ -13,5 +13,5 @@ export const App = () => {
     </Routes>
     <ToastContainer />
   </>
-  );
+  )
 }
