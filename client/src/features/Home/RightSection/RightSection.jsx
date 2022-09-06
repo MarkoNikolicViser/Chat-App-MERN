@@ -1,9 +1,13 @@
 import React from 'react'
 import ctl from '@netlify/classnames-template-literals'
-export const RightSection = () => {
+import { WelcomePart,ChatPart } from './components'
+export const RightSection = (props) => {
+  const {selectedChat}=props
   return (
     <section className={sectionStyle}>
-      <div className={divStyle}>RightSection</div>
+      <div className={divStyle}>
+        {selectedChat?<ChatPart/>:<WelcomePart/>}
+      </div>
     </section>
   )
 }

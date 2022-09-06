@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import ctl from '@netlify/classnames-template-literals';
-import { Icon, Input } from '../../../components';
-import { Dots } from '../../../assets/Svgs';
-import { ChatList } from './components';
+import React, { useState } from 'react'
+import ctl from '@netlify/classnames-template-literals'
+import { Icon, Input } from '../../../components'
+import { Dots } from '../../../assets/Svgs'
+import { ChatList } from './components'
 
 export const LeftSection = props => {
-  const { data } = props;
-  const [searchText, setSearchText] = useState('');
+  const { setSelectedChat } = props
+  const [searchText, setSearchText] = useState('')
   const Function = e => {
-    setSearchText(e.target.value);
-  };
+    setSearchText(e.target.value)
+  }
   return (
     <section className={sectionStyle}>
       <div className={divStyle}>
@@ -30,10 +30,10 @@ export const LeftSection = props => {
         Function={Function}
         placeholder='Search for people'
       />
-      <ChatList />
+      <ChatList setSelectedChat={setSelectedChat}/>
     </section>
-  );
-};
+  )
+}
 //min-w-[30%]
 const sectionStyle = ctl(`w-full
 md:w-[600px]
@@ -45,9 +45,9 @@ flex-col
 items-center
 border-r-2
 border-gray-300
-p-2`);
+p-2`)
 const divStyle = ctl(`w-full
 flex
 items-center
 justify-between
-`);
+`)

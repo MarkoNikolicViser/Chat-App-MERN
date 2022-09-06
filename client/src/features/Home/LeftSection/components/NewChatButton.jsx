@@ -1,5 +1,5 @@
-import React from 'react';
+import React from 'react'
 
 export const NewChatButton = () => {
-  return <div>NewChatButton</div>;
-};
+  return <div>NewChatButton</div>
+}
