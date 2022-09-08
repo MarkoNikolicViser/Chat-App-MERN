@@ -10,11 +10,13 @@ export const WelcomePart = () => {
         <h1 className={h1}>Welcome</h1>
         <b className={b}>Marko Nikolic</b>
       </div>
+      Here are some actions to get you started
     </div>
   )
 }
 const divContainer=ctl(`w-full
 flex
+flex-col
 items-center
 justify-center`)
 const h1=ctl(`text-4xl
