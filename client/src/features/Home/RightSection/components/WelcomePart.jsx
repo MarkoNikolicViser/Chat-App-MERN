@@ -5,10 +5,12 @@ import ctl from '@netlify/classnames-template-literals'
 export const WelcomePart = () => {
   return (
     <div className={divContainer}>
-      <Icon status={true} image='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'/>
-      <div>            
-        <h1 className={h1}>Welcome</h1>
-        <b className={b}>Marko Nikolic</b>
+      <div className='flex items-center justify--center'>
+        <Icon status={true} image='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'/>
+        <div>            
+          <h1 className={h1}>Welcome</h1>
+          <b className={b}>Marko Nikolic</b>
+        </div>
       </div>
       Here are some actions to get you started
     </div>
