@@ -1,63 +1,14 @@
-import React, { useState } from 'react'
-import { Input, Button } from '../../components'
+import React from 'react'
+import { Input, Button, Loader } from '../../components'
 import { FormContainer } from './parts'
-import { toast } from 'react-toastify'
-import { useMutation } from 'react-query'
-import { RegisterUser, ImageUpload } from '../../api/User'
-import { useNavigate } from 'react-router-dom'
-
+import { useRegister } from './useRegister'
 export const Register = () => {
-  const navigate = useNavigate()
-  const [inputs, setInputs] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-  })
-  const [image, setImage] = useState('')
-
-  const registerUser = useMutation(RegisterUser, {
-    onSuccess: data => {
-      toast.success(data.statusText)
-      navigate('/home')
-    },
-    onError: err => toast.error(err.message),
-  })
-  const imageUpload = useMutation(ImageUpload, {
-    onSuccess: data => {
-      toast.success(data.statusText)
-      setImage(data.data.secure_url)
-    },
-    onError: err => toast.error(err.message),
-  })
-
-  const InputValues = e => {
-    setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }))
-  }
-
-  const Submit = e => {
-    e.preventDefault()
-    const { name, email, password } = inputs
-    let data = { name, email, password }
-
-    if (image) data = { ...data, picture: image }
-
-    registerUser.mutate(data)
-  }
-  const SubmitImage = e => {
-    if (!e.target?.files[0]) return
-
-    const image = e.target.files[0]
-    if (image.type === 'image/jpeg' || image.type === 'image/png') {
-      const data = new FormData()
-      data.append('file', image)
-      data.append('upload_preset', 'chat-app')
-      data.append('cloud_name', 'markonikolicviser')
-      imageUpload.mutate(data)
-    } else {
-      toast.error('You can only upload .jpg/.png file')
-    }
-  }
+  const{InputValues,Submit,SubmitImage,imageLoading,loading}=useRegister()
+  
+  if(loading)
+    return <FormContainer>
+      <Loader/>
+    </FormContainer>
 
   return (
     <FormContainer Function={Submit}>
@@ -93,14 +44,14 @@ export const Register = () => {
         required={true}
         type='password'
       />
-      <Input
+      {!imageLoading?<Input
         Function={SubmitImage}
         placeholder='Upload profile image'
         label='Image:'
         required={false}
         type='file'
-      />
-      <Button disabled={imageUpload.isLoading} text='Register' />
+      />:<Loader/>}
+      <Button disabled={imageLoading} text='Register' />
     </FormContainer>
   )
 }

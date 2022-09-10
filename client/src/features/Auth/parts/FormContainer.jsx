@@ -2,9 +2,13 @@ import React from 'react'
 import ctl from '@netlify/classnames-template-literals'
 
 export const FormContainer = (props) => {
-  const { Function, children } = props
+  const { Function, children, } = props
+  const SubmitFunction=(e)=>{
+    e.preventDefault()
+    Function()
+  }
   return (
-    <form onSubmit={Function} className={formStyle}>
+    <form onSubmit={SubmitFunction} className={formStyle}>
       {children}</form>
   ) 
 }
