@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import ctl from '@netlify/classnames-template-literals';
+import React, { useState } from 'react'
+import ctl from '@netlify/classnames-template-literals'
 
 export const Input = props => {
   const { label, required, type, disable, placeholder, value, Function, name } =
-    props;
-  const [showPass, setShowPass] = useState(type);
+    props
+  const [showPass, setShowPass] = useState(type)
 
   const invertType = () => {
-    if (showPass === 'password') setShowPass('text');
+    if (showPass === 'password') setShowPass('text')
     else {
-      setShowPass('password');
+      setShowPass('password')
     }
-  };
+  }
 
   return (
     <div className='flex flex-col items-start mb-5 w-full'>
@@ -26,7 +26,7 @@ export const Input = props => {
       <div className='relative w-full'>
         <input
           id={label}
-          className={`bg-white appearance-none relative block h-10 w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:z-10 text-xs`}
+          className={'bg-white appearance-none relative block h-10 w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:z-1 text-xs'}
           value={value}
           placeholder={placeholder}
           onChange={Function}
@@ -50,8 +50,8 @@ export const Input = props => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 const buttonStyle = `w-2/12
 text-white
 absolute
@@ -61,8 +61,8 @@ hover:bg-gray-500
 font-small
 rounded-lg
 text-sm
-py-2 z-10`;
+py-2 z-1`
 const buttonBg = {
   primary: ctl(`bg-gray-400 ${buttonStyle}`),
   secondary: ctl(`bg-gray-600 ${buttonStyle}`),
-};
+}

@@ -5,11 +5,6 @@ import { useRegister } from './useRegister'
 export const Register = () => {
   const{InputValues,Submit,SubmitImage,imageLoading,loading}=useRegister()
   
-  if(loading)
-    return <FormContainer>
-      <Loader/>
-    </FormContainer>
-
   return (
     <FormContainer Function={Submit}>
       <Input
@@ -52,6 +47,7 @@ export const Register = () => {
         type='file'
       />:<Loader/>}
       <Button disabled={imageLoading} text='Register' />
+      {loading&&<Loader/>}
     </FormContainer>
   )
 }

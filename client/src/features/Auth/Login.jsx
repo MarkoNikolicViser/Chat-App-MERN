@@ -5,11 +5,6 @@ import { useLogin } from './useLogin'
 
 export const Login = () => {
   const {inputs,InputValues,Submit,GuestLogin,loading}=useLogin()
-  
-  if(loading)
-    return <FormContainer>
-      <Loader/>
-    </FormContainer>
 
   return (
     <FormContainer Function={Submit}>
@@ -37,6 +32,7 @@ export const Login = () => {
         type={'button'}
         text={'Login as guest'}
       />
+      {loading&&<Loader/>}
     </FormContainer>
   )
 }

@@ -33,8 +33,8 @@ export const useRegister = () => {
     setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
   
-  const Submit = e => {
-    e.preventDefault()
+  const Submit = () => {
+    // e.preventDefault()
     const { name, email, password } = inputs
     let data = { name, email, password }
   

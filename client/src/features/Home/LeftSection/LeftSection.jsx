@@ -23,7 +23,7 @@ export const LeftSection = props => {
             <h6>Set a status</h6>
           </div>
         </div>
-        <Dots color='gray' w={22} h={22} />
+        <Dots color='gray' w={22}/>
       </div>
       <Input
         value={searchText}

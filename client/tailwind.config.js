@@ -3,6 +3,7 @@ module.exports = {
     './index.html',
     './src/**/*.{vue,jsx,ts,js}',
   ],
+  plugins: [require('daisyui')],
   theme:{
     extend:{
       colors:{
@@ -11,5 +12,5 @@ module.exports = {
       }
     }
   }
- // ... 
+  // ... 
 }

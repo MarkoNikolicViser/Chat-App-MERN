@@ -11,6 +11,6 @@ const { protect } = require('../middleware/authMidleware');
 router.get('/get', protect, chatGet);
 router.post('/getallchats', protect, fetchChats);
 router.post('/creategroup', protect, createGroup);
-router.put('/renamegrouo', protect, renameGroup);
+router.put('/renamegroup', protect, renameGroup);
 
 module.exports = router;

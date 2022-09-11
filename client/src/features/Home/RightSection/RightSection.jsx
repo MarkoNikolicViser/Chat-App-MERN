@@ -19,7 +19,8 @@ h-full
 flex-col
 justify-center
 items-center`)
-const divStyle = ctl(`
+const divStyle = ctl(`w-full
+h-full
 transition-opacity
 duration-300
 ease-out
