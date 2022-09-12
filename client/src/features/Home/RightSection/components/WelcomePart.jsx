@@ -52,6 +52,6 @@ border-gray-300
 flex
 flex-col
 items-center
-justify-evenly
+justify-between
 p-2
 rounded-2xl`)

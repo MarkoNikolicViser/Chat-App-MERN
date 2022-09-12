@@ -7,7 +7,7 @@ export const Auth = () => {
   const [show, setShow] = useState(true)
 
   return <Background>
-    <div className='w-full flex flex-col items-center justify-center'>
+    <div className='w-full min-h-[70%] flex flex-col items-center justify-between'>
       <AppHeadLine />
       <Tabs show={show} setShow={setShow} />
       {show ? <Login /> : <Register />}

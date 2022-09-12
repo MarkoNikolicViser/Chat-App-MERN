@@ -5,19 +5,16 @@ import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 
 export const useLogin = () => {
+
   const navigate = useNavigate()
   const [inputs, setInputs] = useState({
     email: '',
     password: '',
   })
   const loginUser = useMutation(LoginUser, {
-    onSuccess: data => {
-      toast.success(data.statusText)
-      navigate('/home')
-    },
+    onSuccess: data => onSuccess(data),
     onError: err => toast.error(err.message),
   })
-    
   const InputValues =useCallback( e => {
     setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }))
   },[])
@@ -30,5 +27,12 @@ export const useLogin = () => {
     const demoParams={ email: 'marko.nikolic@almaks.rs', password: 'marko' }
     loginUser.mutate(demoParams)
   },[])
+  const onSuccess=(data)=>{
+    toast.success(data.statusText)
+    const str=JSON.stringify(data)
+    console.log(data)
+    localStorage.setItem('userInfo',str)
+    navigate('/home')
+  }
   return {inputs,InputValues,Submit,GuestLogin,loading:loginUser.isLoading}  
 }
