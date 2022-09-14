@@ -2,9 +2,9 @@ import React from 'react'
 import ctl from '@netlify/classnames-template-literals'
 
 export const AppHeadLine = () => {
-    return (
-        <h1 className={style}>Online Chat</h1>
-    )
+  return (
+    <h1 className={style}>Online Chat</h1>
+  )
 }
 const style = ctl(`w-2/3
 md:w-1/3
