@@ -1,7 +1,7 @@
 import React from 'react'
 import ctl from '@netlify/classnames-template-literals'
 
-export const Button = props => {
+export const Button = (props) => {
   const { text, disabled, type, functionClick } = props
   return (
     <button

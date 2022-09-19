@@ -3,51 +3,56 @@ import { Input, Button, Loader } from '../../components'
 import { FormContainer } from './parts'
 import { useRegister } from './useRegister'
 export const Register = () => {
-  const{InputValues,Submit,SubmitImage,imageLoading,loading}=useRegister()
-  
+  const { InputValues, Submit, SubmitImage, imageLoading, loading } =
+    useRegister()
+
   return (
     <FormContainer Function={Submit}>
       <Input
         Function={InputValues}
-        placeholder='Enter your name'
-        label='Name'
-        name='name'
+        placeholder="Enter your name"
+        label="Name"
+        name="name"
         required={true}
-        type='text'
+        type="text"
       />
       <Input
         Function={InputValues}
-        placeholder='Enter your email adress'
-        label='Email Adress:'
-        name='email'
+        placeholder="Enter your email adress"
+        label="Email Adress:"
+        name="email"
         required={true}
-        type='email'
+        type="email"
       />
       <Input
         Function={InputValues}
-        placeholder='Enter your password'
-        label='Password:'
-        name='password'
+        placeholder="Enter your password"
+        label="Password:"
+        name="password"
         required={true}
-        type='password'
+        type="password"
       />
       <Input
         Function={InputValues}
-        placeholder='Confirm your password'
-        label='Password confirm:'
-        name='confirmPassword'
+        placeholder="Confirm your password"
+        label="Password confirm:"
+        name="confirmPassword"
         required={true}
-        type='password'
+        type="password"
       />
-      {!imageLoading?<Input
-        Function={SubmitImage}
-        placeholder='Upload profile image'
-        label='Image:'
-        required={false}
-        type='file'
-      />:<Loader/>}
-      <Button disabled={imageLoading} text='Register' />
-      {loading&&<Loader/>}
+      {!imageLoading ? (
+        <Input
+          Function={SubmitImage}
+          placeholder="Upload profile image"
+          label="Image:"
+          required={false}
+          type="file"
+        />
+      ) : (
+        <Loader />
+      )}
+      <Button disabled={imageLoading} text="Register" />
+      {loading && <Loader />}
     </FormContainer>
   )
 }

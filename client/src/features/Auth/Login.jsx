@@ -1,10 +1,10 @@
 import React from 'react'
-import { Input, Button,Loader } from '../../components'
+import { Input, Button, Loader } from '../../components'
 import { FormContainer } from './parts'
 import { useLogin } from './useLogin'
 
 export const Login = () => {
-  const {inputs,InputValues,Submit,GuestLogin,loading}=useLogin()
+  const { inputs, InputValues, Submit, GuestLogin, loading } = useLogin()
 
   return (
     <FormContainer Function={Submit}>
@@ -32,7 +32,7 @@ export const Login = () => {
         type={'button'}
         text={'Login as guest'}
       />
-      {loading&&<Loader/>}
+      {loading && <Loader />}
     </FormContainer>
   )
 }

@@ -1,2 +1,2 @@
-export {ChatPart} from './ChatPart'
-export {WelcomePart} from './WelcomePart'
+export { ChatPart } from './ChatPart'
+export { WelcomePart } from './WelcomePart'

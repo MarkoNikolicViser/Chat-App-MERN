@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ctl from '@netlify/classnames-template-literals'
 
-export const Input = props => {
+export const Input = (props) => {
   const { label, required, type, disable, placeholder, value, Function, name } =
     props
   const [showPass, setShowPass] = useState(type)
@@ -14,19 +14,21 @@ export const Input = props => {
   }
 
   return (
-    <div className='flex flex-col items-start mb-5 w-full'>
+    <div className="flex flex-col items-start mb-5 w-full">
       {Boolean(label) && (
         <label
-          className='text-sm ml-2 font-semibold mb-2 italic md:whitespace-normal lg:whitespace-nowrap w-96 mr-2'
+          className="text-sm ml-2 font-semibold mb-2 italic md:whitespace-normal lg:whitespace-nowrap w-96 mr-2"
           htmlFor={label}
         >
           {label}
         </label>
       )}
-      <div className='relative w-full'>
+      <div className="relative w-full">
         <input
           id={label}
-          className={'bg-white appearance-none relative block h-10 w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:z-1 text-xs'}
+          className={
+            'bg-white appearance-none relative block h-10 w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none focus:z-1 text-xs'
+          }
           value={value}
           placeholder={placeholder}
           onChange={Function}
@@ -39,7 +41,7 @@ export const Input = props => {
         />
         {type === 'password' && (
           <button
-            type='button'
+            type="button"
             onClick={invertType}
             className={
               showPass === 'text' ? buttonBg.secondary : buttonBg.primary

@@ -4,18 +4,18 @@ import { Icon, Input } from '../../../components'
 import { Dots } from '../../../assets/Svgs'
 import { ChatList } from './components'
 
-export const LeftSection = props => {
+export const LeftSection = (props) => {
   const { setSelectedChat } = props
   const [searchText, setSearchText] = useState('')
-  const Function = e => {
+  const Function = (e) => {
     setSearchText(e.target.value)
   }
   return (
     <section className={sectionStyle}>
       <div className={divStyle}>
-        <div className='flex items-center'>
+        <div className="flex items-center">
           <Icon
-            image='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'
+            image="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
             status={true}
           />
           <div>
@@ -23,14 +23,14 @@ export const LeftSection = props => {
             <h6>Set a status</h6>
           </div>
         </div>
-        <Dots color='gray' w={22}/>
+        <Dots color="gray" w={22} />
       </div>
       <Input
         value={searchText}
         Function={Function}
-        placeholder='Search for people'
+        placeholder="Search for people"
       />
-      <ChatList setSelectedChat={setSelectedChat}/>
+      <ChatList setSelectedChat={setSelectedChat} />
     </section>
   )
 }

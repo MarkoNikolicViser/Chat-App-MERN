@@ -1,11 +1,11 @@
 import ctl from '@netlify/classnames-template-literals'
 import React from 'react'
 
-export const Icon = props => {
+export const Icon = (props) => {
   const { image, status } = props
   return (
     <div className={divStyle}>
-      <img src={image} className={imageStyle} alt='user-icon' />
+      <img src={image} className={imageStyle} alt="user-icon" />
       {status && <div className={statusDivStyle} />}
     </div>
   )

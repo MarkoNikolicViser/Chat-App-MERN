@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const Modal = (props) => {
-  const {modalName,children}=props
+  const { modalName, children } = props
   return (
     <>
       <input type="checkbox" id={modalName} className="modal-toggle" />
@@ -10,5 +10,6 @@ export const Modal = (props) => {
           {children}
         </label>
       </label>
-    </>  )
+    </>
+  )
 }

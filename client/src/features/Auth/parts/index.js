@@ -1,2 +1,2 @@
-export {Tabs} from './Tabs'
-export {FormContainer} from './FormContainer'
+export { Tabs } from './Tabs'
+export { FormContainer } from './FormContainer'

@@ -3,12 +3,12 @@ import { Icon } from '../../../../components'
 import ctl from '@netlify/classnames-template-literals'
 
 export const ChatListElement = (props) => {
-  const {setSelectedChat,data}=props
+  const { setSelectedChat, data } = props
   return (
-    <div onClick={()=>setSelectedChat(data?.name)} className={mainDivStyle}>
-      <Icon image='https://i.pinimg.com/originals/ba/d4/5a/bad45a40fa6e153ef8d1599ba875102c.png' />
-      <div className='w-full flex flex-col justify-center'>
-        <div className='w-[95%] flex justify-between'>
+    <div onClick={() => setSelectedChat(data?.name)} className={mainDivStyle}>
+      <Icon image="https://i.pinimg.com/originals/ba/d4/5a/bad45a40fa6e153ef8d1599ba875102c.png" />
+      <div className="w-full flex flex-col justify-center">
+        <div className="w-[95%] flex justify-between">
           <h1>{data?.name}</h1>
           <p>8/28/2022</p>
         </div>

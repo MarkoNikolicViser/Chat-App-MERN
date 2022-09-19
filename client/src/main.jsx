@@ -4,6 +4,7 @@ import { App } from './App'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { QueryClientProvider, QueryClient } from 'react-query'
+import ChatProvider from '../state/context'
 
 const client = new QueryClient()
 
@@ -11,7 +12,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <QueryClientProvider client={client}>
       <BrowserRouter>
-        <App />
+        <ChatProvider>
+          <App />
+        </ChatProvider>
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>
