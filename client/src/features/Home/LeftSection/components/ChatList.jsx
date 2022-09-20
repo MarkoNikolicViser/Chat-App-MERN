@@ -6,7 +6,6 @@ import { Loader } from '../../../../components'
 export const ChatList = (props) => {
   const { setSelectedChat } = props
   const {data,loading}=useChatList()
-  console.log(data)
   if(loading)
     return <Loader/>
   return (
@@ -14,7 +13,7 @@ export const ChatList = (props) => {
       {data?.map(m => (
         <ChatListElement
           key={m._id}
-          data={{ name: m.chatName }}
+          data={m}
           setSelectedChat={setSelectedChat}
         />
       ))}

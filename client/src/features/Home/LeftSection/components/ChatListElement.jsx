@@ -4,13 +4,15 @@ import ctl from '@netlify/classnames-template-literals'
 
 export const ChatListElement = (props) => {
   const { setSelectedChat, data } = props
+  const {chatName,updatedAt,groupAdmin}=data
+  console.log(data)
   return (
     <div onClick={() => setSelectedChat(data?.name)} className={mainDivStyle}>
-      <Icon image="https://i.pinimg.com/originals/ba/d4/5a/bad45a40fa6e153ef8d1599ba875102c.png" />
+      <Icon image={groupAdmin?.picture} />
       <div className="w-full flex flex-col justify-center">
         <div className="w-[95%] flex justify-between">
-          <h1>{data?.name}</h1>
-          <p>8/28/2022</p>
+          <h1>{chatName}</h1>
+          <p>{updatedAt}</p>
         </div>
         <p>Poslednja poruka...</p>
       </div>
