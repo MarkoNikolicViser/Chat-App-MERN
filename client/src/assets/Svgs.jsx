@@ -1,12 +1,18 @@
 import React from 'react'
 import ctl from '@netlify/classnames-template-literals'
 import { Modal } from '../components'
+import { useNavigate } from 'react-router-dom'
 export const Dots = (props) => {
   const { w } = props
   const svgStyle = ctl(`hover:cursor-pointer
   fill-gray-500
   hover:fill-gray-400
  `)
+  const navigate=useNavigate()
+  const Funkcija=()=>{
+    localStorage.removeItem('userInfo')
+    navigate('/auth')
+  }
   return (
     <>
       <label htmlFor="settingsModal" className="modal-button">
@@ -20,7 +26,7 @@ export const Dots = (props) => {
         </svg>
       </label>
       <Modal modalName="settingsModal">
-        <button>Hello</button>
+        <button className='bg-gray-400 border-2 border-gray-500' onClick={Funkcija}>Logout</button>
       </Modal>
     </>
   )

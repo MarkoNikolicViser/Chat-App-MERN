@@ -1,18 +1,19 @@
 import React from 'react'
 import { Icon } from '../../../../components'
 import ctl from '@netlify/classnames-template-literals'
+import { DateFormater } from '../../../../Helper/Formating'
 
 export const ChatListElement = (props) => {
   const { setSelectedChat, data } = props
   const {chatName,updatedAt,groupAdmin}=data
-  console.log(data)
+
   return (
-    <div onClick={() => setSelectedChat(data?.name)} className={mainDivStyle}>
+    <div onClick={() => setSelectedChat(data?.id)} className={mainDivStyle}>
       <Icon image={groupAdmin?.picture} />
       <div className="w-full flex flex-col justify-center">
         <div className="w-[95%] flex justify-between">
           <h1>{chatName}</h1>
-          <p>{updatedAt}</p>
+          <p>{DateFormater(updatedAt)}</p>
         </div>
         <p>Poslednja poruka...</p>
       </div>
