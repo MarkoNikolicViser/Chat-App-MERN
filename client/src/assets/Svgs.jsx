@@ -9,7 +9,7 @@ export const Dots = (props) => {
   hover:fill-gray-400
  `)
   const navigate=useNavigate()
-  const Funkcija=()=>{
+  const LogoutFunction=()=>{
     localStorage.removeItem('userInfo')
     navigate('/auth')
   }
@@ -26,7 +26,7 @@ export const Dots = (props) => {
         </svg>
       </label>
       <Modal modalName="settingsModal">
-        <button className='bg-gray-400 border-2 border-gray-500' onClick={Funkcija}>Logout</button>
+        <button className='bg-gray-400 border-2 border-gray-500' onClick={LogoutFunction}>Logout</button>
       </Modal>
     </>
   )
