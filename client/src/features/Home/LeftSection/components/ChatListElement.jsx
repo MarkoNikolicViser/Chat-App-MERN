@@ -6,9 +6,8 @@ import { DateFormater } from '../../../../Helper/Formating'
 export const ChatListElement = (props) => {
   const { setSelectedChat, data } = props
   const {chatName,updatedAt,groupAdmin}=data
-
   return (
-    <div onClick={() => setSelectedChat(data?.id)} className={mainDivStyle}>
+    <div onClick={() => setSelectedChat(data?._id)} className={mainDivStyle}>
       <Icon image={groupAdmin?.picture} />
       <div className="w-full flex flex-col justify-center">
         <div className="w-[95%] flex justify-between">
